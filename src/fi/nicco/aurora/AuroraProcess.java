@@ -46,7 +46,11 @@ public class AuroraProcess {
         }
 
         AuroraSendMail auroraSendMail = new AuroraSendMail();
+        auroraSendMail.setPassword( password );
+        auroraSendMail.setUsername( props.getProperty( "username" ) );
+
         aurora.runProcess( logger, props, auroraSendMail );
+
     }
 
     public static Properties loadProperties( String fileLocation, Logger logger ) {

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project Aurora">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+    	<copy file="aurora.properties" todir="dist/"/>
+        <jar destfile="/Users/nrantala/work/workspace/Aurora/dist/aurora.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="fi.nicco.aurora.AuroraProcess"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="/Users/nrantala/work/workspace/Aurora/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-imaging.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-collections.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/joda-time.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/mail.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-httpclient.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-lang.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-beanutils.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-net.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-validator.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-digester.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-pool.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-io.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-discovery.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-fileupload.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-logging.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/commons-codec.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/slf4j-api-1.7.5.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/nrantala/work/workspace/Aurora/lib/slf4j-jdk14-1.7.5.jar"/>
+        </jar>
+    </target>
+</project>

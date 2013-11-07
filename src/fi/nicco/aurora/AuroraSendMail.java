@@ -48,7 +48,7 @@ public class AuroraSendMail {
             return null;
         }
 
-        if ( properties.get( "password" ) == null ) {
+        if ( getPassword() == null ) {
             logger.error( "Can not send message, mail password not set" );
             return null;
         }
@@ -56,7 +56,7 @@ public class AuroraSendMail {
         Session session = Session.getInstance( properties, new javax.mail.Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication( properties.getProperty( "usernanme" ), properties.getProperty( "password" ) );
+                return new PasswordAuthentication( getUsername(), getPassword() );
             }
         } );
 
@@ -135,6 +135,17 @@ public class AuroraSendMail {
 
     }
 
+    private String password;
+    private String username;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword( String password ) {
+        this.password = password;
+    }
+
     public String getAlertSubject() {
         return alertSubject;
     }
@@ -173,6 +184,14 @@ public class AuroraSendMail {
 
     public void setAttatchment( File attatchment ) {
         this.attatchment = attatchment;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername( String username ) {
+        this.username = username;
     }
 
 }
