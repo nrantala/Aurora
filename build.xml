@@ -4,6 +4,7 @@
     <!--ANT 1.7 is required                                        -->
     <target name="create_run_jar">
     	<copy file="aurora.properties" todir="dist/"/>
+	<copy file="aurora.sh" todir="dist/"/>
         <jar destfile="/Users/nrantala/work/workspace/Aurora/dist/aurora.jar" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="fi.nicco.aurora.AuroraProcess"/>
